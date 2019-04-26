@@ -5,7 +5,7 @@ make clean
 make
 
 # Delete preexisting machine source files.
-rm machines/M*
+rm machines/M* 2> /dev/null
 
 # Generate the state machine files using the parser.
 # I am well aware of the inefficiencies of including needless
