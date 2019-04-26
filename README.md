@@ -8,14 +8,14 @@ code.
 
 ## Usage Instructions
 1. Copy your versions of the following files into FoundationsTester/ (where README.md is):
-    Makefile
-    Main.cpp
-    SMClass.h
-    SMClass.cpp
-    globals.h
-    globals.cpp
-    SM.lex
-    SM.yacc
+* Makefile
+* Main.cpp
+* SMClass.h
+* SMClass.cpp
+* globals.h
+* globals.cpp
+* SM.lex
+* SM.yacc
 
 2. Execute the testAll.sh bash script (i.e. ./testAll.sh ).
 
