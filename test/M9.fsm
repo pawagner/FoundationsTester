@@ -1,0 +1,28 @@
+DFA;
+Name: M9;
+Inputs: 0,1,2;
+States: A,B,C,D,E,F;
+Start: A;
+Final: F;
+A: (0,B),(1,A),(2,A);
+B: (0,C),(1,A),(2,A);
+C: (0,C),(1,A),(2,D);
+D: (0,A),(1,A),(2,E);
+E: (0,A),(1,F),(2,A);
+F: (0,F),(1,F),(2,F);
+End.
+
+DFA;
+Name: M10;
+Inputs: x,y,z;
+States: One,Two,Three,Four,Five,Six,Bad;
+Start: One;
+Final: Six;
+One: (x,Two),(y,Bad),(z,Bad);
+Two: (x,Three),(y,Bad),(z,Bad);
+Three: (x,Bad),(y,Four),(z,Bad);
+Four: (x,Bad),(y,Five),(z,Bad);
+Five: (x,Six),(y,Bad),(z,Bad);
+Six: (x,Bad),(y,Bad),(z,Bad);
+Bad: (x,Bad),(y,Bad),(z,Bad);
+End.

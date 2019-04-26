@@ -1,0 +1,10 @@
+DFA;
+	Name: M7;
+	Inputs: 0,1;
+	States: A,B,C;
+	Start: A;
+	Final: B,C;
+	A: (0,A),(1,B);
+	B: (0,B),(1,C);
+	C: (0,C),(1,A);
+End.

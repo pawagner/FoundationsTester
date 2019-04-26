@@ -1,0 +1,43 @@
+DFA;
+	Name: M3;
+	Inputs: 0,1,2;
+	States: A,B,C;
+	Start: A;
+	Final: A;
+	A: (0,A),(1,B),(2,A);
+	B: (0,B),(1,C),(2,B);
+	C: (0,C),(1,A),(2,C);
+End.
+
+DFA;
+	Name: M4;
+	Inputs: 0,1,2;
+	States: A,B,C;
+	Start: A;
+	Final: A;
+	A: (0,A),(1,A),(2,B);
+	B: (0,B),(1,B),(2,C);
+	C: (0,C),(1,C),(2,A);
+End.
+
+DFA;
+	Name: M5;
+	Inputs: a,b;
+	States: First,Second;
+	Start: First;
+	Final: First;
+	First: (a,Second),(b,First);
+	Second: (a,First),(b,Second);
+End.
+
+DFA;
+	Name: M6;
+	Inputs: a,b,c;
+	States: AA,BB,CC,X;
+	Start: AA;
+	Final: AA;
+	AA: (a,BB),(b,X),(c,X);
+	BB: (a,X),(b,CC),(c,X);
+	CC: (a,X),(b,X),(c,AA);
+	X: (a,X),(b,X),(c,X);
+End.

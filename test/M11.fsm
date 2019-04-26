@@ -1,0 +1,148 @@
+DFA;
+	Name: M11;
+	Inputs: a,b;
+	States: X, A,B,AB,BA;
+	Start: X;
+	Final: AB,BA;
+	X: (a,A),(b,B);
+	A: (a,A),(b,AB);
+	B: (a,BA),(b,B);
+	AB: (a,AB),(b,AB);
+	BA: (a,BA),(b,BA);
+End.
+
+DFA;
+	Name: M12;
+	Inputs: a,b,c,d;
+	States: X,A,B,C,D,ZZZ;
+	Start: X;
+	Final: D;
+	X: (a,A),(b,ZZZ),(c,ZZZ),(d,ZZZ);
+	A: (a,ZZZ),(b,B),(c,ZZZ),(d,ZZZ);
+	B: (a,ZZZ),(b,ZZZ),(c,C),(d,ZZZ);
+	C: (a,ZZZ),(b,ZZZ),(c,ZZZ),(d,D);
+	D: (a,ZZZ),(b,ZZZ),(c,ZZZ),(d,ZZZ);
+	ZZZ: (a,ZZZ),(b,ZZZ),(c,ZZZ),(d,ZZZ);
+End.
+
+DFA;
+	Name: M13;
+	Inputs: 0,1,2,4;
+	States: fx,f0,f1,f2,f4,f01,f02,f04,f12,f14,f24,f012,f014,f024,f124,f0124;
+	Start: fx;
+	Final: f0124;
+fx: (0,f0),(1,f1),(2,f2),(4,f4);
+f0: (0,f0),(1,f01),(2,f02),(4,f04);
+f1: (0,f01),(1,f1),(2,f12),(4,f14);
+f2: (0,f02),(1,f12),(2,f2),(4,f24);
+f4: (0,f04),(1,f14),(2,f24),(4,f4);
+f01: (0,f01),(1,f01),(2,f012),(4,f014);
+f02: (0,f02),(1,f012),(2,f02),(4,f024);
+f04: (0,f04),(1,f024),(2,f024),(4,f04);
+f12: (0,f012),(1,f12),(2,f12),(4,f124);
+f14: (0,f014),(1,f14),(2,f124),(4,f14);
+f24: (0,f024),(1,f124),(2,f24),(4,f24);
+f012: (0,f012),(1,f012),(2,f012),(4,f0124);
+f014: (0,f014),(1,f014),(2,f0124),(4,f014);
+f024: (0,f024),(1,f0124),(2,f024),(4,f024);
+f124: (0,f0124),(1,f124),(2,f124),(4,f124);
+f0124: (0,f0124),(1,f0124),(2,f0124),(4,f0124);
+End.
+
+DFA;
+	Name: M14;
+	Inputs: 0,1,2,e;
+	States: a1,a2,a3,a4,a5,a6;
+	Start: a1;
+	Final: a6;
+a1: (0,a1),(1,a1),(2,a1),(e,a2);
+a2: (0,a2),(1,a2),(2,a2),(e,a3);
+a3: (0,a3),(1,a3),(2,a3),(e,a4);
+a4: (0,a4),(1,a4),(2,a4),(e,a5);
+a5: (0,a5),(1,a5),(2,a5),(e,a6);
+a6: (0,a6),(1,a6),(2,a6),(e,a6);
+End.
+
+DFA;
+	Name: M15;
+	Inputs: 1,2,0;
+	States: X,A1,A2,A3,A4,A5;
+	Start: X;
+	Final: A5;
+X: (1,A1),(2,X),(0,X);
+A1: (1,A2),(2,X),(0,X);
+A2: (1,A2),(2,A3),(0,X);
+A3: (1,A1),(2,A4),(0,X);
+A4: (1,A1),(2,A1),(0,A5);
+A5: (1,A5),(2,A5),(0,A5);
+End.
+
+DFA;
+	Name: M16;
+	Inputs: d,e,4;
+	States: S,e1,e2,e3,r1,r2;
+	Start: S;
+	Final: S;
+S: (d,S),(e,e1),(4,S);
+e1: (d,S),(e,e2),(4,S);
+e2: (d,S),(e,e3),(4,S);
+e3: (d,e3),(e,r1),(4,e3);
+r1: (d,e3),(e,r2),(4,e3);
+r2: (d,e3),(e,S),(4,e3);
+End.
+
+DFA;
+	Name: M17;
+	Inputs: 0,2;
+	States: S,A,b,c;
+	Start: S;
+	Final: S;
+S: (0,S),(2,A);
+A: (0,A),(2,b);
+b: (0,b),(2,c);
+c: (0,c),(2,S);
+End.
+
+DFA;
+	Name: M18;
+	Inputs: 8,9;
+	States: E8E9, O8E9, O8O9, E8O9;
+	Start: E8E9;
+	Final: O8O9;
+E8E9: (8,O8E9),(9,E8O9);
+O8E9: (8,E8E9),(9,O8O9);
+E8O9: (8,O8O9),(9,E8E9);
+O8O9: (8,E8O9),(9,O8E9);
+End.
+
+DFA;
+Name: M19;
+Inputs: 0,1,2;
+States: E0E1E2,E0E1O2,E0O1E2,E0O1O2,O0E1E2,O0E1O2,O0O1E2,O0O1O2;
+Start: E0E1E2;
+Final: O0E1O2;
+
+E0E1E2: (0,O0E1E2),(1,E0O1E2),(2,E0E1O2);
+E0E1O2: (0,O0E1O2),(1,E0O1O2),(2,E0E1E2);
+E0O1E2: (0,O0O1E2),(1,E0E1E2),(2,E0O1O2);
+E0O1O2: (0,O0O1O2),(1,E0E1O2),(2,E0O1E2);
+O0E1E2: (0,E0E1E2),(1,O0O1E2),(2,O0E1O2);
+O0E1O2: (0,E0E1O2),(1,O0O1O2),(2,O0E1E2);
+O0O1E2: (0,E0O1E2),(1,O0E1E2),(2,O0O1O2);
+O0O1O2: (0,E0O1O2),(1,O0E1O2),(2,O0O1E2);
+
+End.
+
+DFA;
+Name: M20;
+Inputs: x,y,z;
+States: S,X1,X2,Z1,Z2,Z3;
+Start: S;
+Final: Z3;
+S: (x,X1),(y,S),(z,S);
+X1: (x,X2),(y,X1),(z,X1);
+X2: (x,X2),(y,X2),(z,Z1);
+Z1: (x,Z1),(y,Z1),(z,Z2);
+Z2: (x,Z2),(y,Z2),(z,Z3);
+Z3: (x,Z3),(y,Z3),(z,Z3);
+End.

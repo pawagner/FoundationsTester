@@ -1,0 +1,16 @@
+DFA;
+	Name: M8;
+	Inputs: 0,1,2;
+	States: AA,AB,AC,BA,BB,BC,CA,CB,CC;
+	Start: AA;
+	Final: AA;
+	AA: (0,AA),(1,BA),(2,AB);
+	AB: (0,AB),(1,BB),(2,AC);
+	AC: (0,AC),(1,BC),(2,AA);
+	BA: (0,BA),(1,CA),(2,BB);
+	BB: (0,BB),(1,CB),(2,BC);
+	BC: (0,BC),(1,CC),(2,BA);
+	CA: (0,CA),(1,AA),(2,CB);
+	CB: (0,CB),(1,AB),(2,CC);
+	CC: (0,CC),(1,AC),(2,CA);
+End.

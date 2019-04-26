@@ -1,0 +1,22 @@
+DFA;
+	Name: M1;
+	Inputs: 0,1;
+	States: A,B;
+	Start: A;
+	Final: B;
+	A: (0,A),(1,B);
+	B: (0,B),(1,A);
+End.
+
+DFA;
+	Name: M2;
+	Inputs: 0,1,a,b;
+	States: Aa,Ba,Ab,Bb,X;
+	Start: Aa;
+	Final: Bb;
+	Aa: (0,Aa),(1,Ba),(a,X),(b,X);
+	Ba: (0,Ba),(1,Aa),(a,Ab),(b,Bb);
+	Ab: (0,X),(1,X),(a,Ab),(b,Bb);
+	Bb: (0,X),(1,X),(a,Bb),(b,Ab);
+	X: (0,X),(a,X),(b,X),(1,X);
+End.
